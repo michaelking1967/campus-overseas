@@ -1,0 +1,22 @@
+[
+  {
+    "id": "nlgsw",
+    "name_en": "New Life Gospel Church Southwest Campus",
+    "name_zh": "新生命福音堂西南堂",
+    "denomination": "Baptist",
+    "language": [
+      "Mandarin",
+      "English"
+    ],
+    "city": "Roanoke",
+    "state": "TX",
+    "address": "800 Trophy Club Dr. Roanoke, TX 76262",
+    "website": "https://nlgcsw.org",
+    "phone": "",
+    "service_time": "Sunday 10:00 AM",
+    "intro_en": "Chinese immigrant church with active campus ministry in the Southlake/Trophy Club area.",
+    "intro_zh": "位于南湖 / Trophy Club 地区的华人移民教会，设有活跃的校园事工。",
+    "student_ministry": true,
+    "map_url": "https://maps.google.com/?q=800+Trophy+Club+Dr.+Roanoke+TX+76262"
+  }
+]

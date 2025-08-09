@@ -1,0 +1,83 @@
+[
+  {
+    "id": "dts",
+    "name_en": "Dallas Theological Seminary",
+    "name_zh": "达拉斯神学院",
+    "types": [
+      "seminary",
+      "graduate",
+      "doctoral"
+    ],
+    "state": "TX",
+    "city": "Dallas",
+    "sevp": true,
+    "i20": true,
+    "boarding": false,
+    "tuition_band_usd": "20k–30k/yr",
+    "denomination": "Non-denominational / Evangelical",
+    "faith_required": true,
+    "intl_office_url": "https://www.dts.edu/",
+    "programs": [
+      "ThM",
+      "MDiv",
+      "MA",
+      "DMin",
+      "PhD"
+    ],
+    "detail": {
+      "en": "A leading evangelical seminary with strong biblical languages.",
+      "zh": "著名福音派神学院，重视圣经原文与释经。"
+    }
+  },
+  {
+    "id": "wheaton",
+    "name_en": "Wheaton College",
+    "name_zh": "惠顿学院（基督教文理学院）",
+    "types": [
+      "undergrad",
+      "graduate"
+    ],
+    "state": "IL",
+    "city": "Wheaton",
+    "sevp": true,
+    "i20": true,
+    "boarding": true,
+    "tuition_band_usd": "40k+/yr",
+    "denomination": "Evangelical / Interdenominational",
+    "faith_required": true,
+    "intl_office_url": "https://www.wheaton.edu/",
+    "programs": [
+      "BA",
+      "BS",
+      "MA"
+    ],
+    "detail": {
+      "en": "Christian liberal arts college with strong faith integration.",
+      "zh": "以信仰与学术整合著称的基督教文理学院。"
+    }
+  },
+  {
+    "id": "k12_abbey",
+    "name_en": "St. Michael's Abbey Prep (Example)",
+    "name_zh": "圣迈克修道院预备学校（示例）",
+    "types": [
+      "k12"
+    ],
+    "state": "CA",
+    "city": "Example City",
+    "sevp": true,
+    "i20": true,
+    "boarding": true,
+    "tuition_band_usd": "40k+/yr",
+    "denomination": "Catholic",
+    "faith_required": true,
+    "intl_office_url": "#",
+    "programs": [
+      "Grades 9–12"
+    ],
+    "detail": {
+      "en": "Boarding Catholic high school (placeholder data).",
+      "zh": "寄宿制天主教高中（占位示例数据）。"
+    }
+  }
+]
