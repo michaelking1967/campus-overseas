@@ -1,1 +1,6 @@
-{}
+{
+  "schools_csv_url": "https://docs.google.com/spreadsheets/d/XXXX/export?format=csv&gid=0",
+  "churches_csv_url": "https://docs.google.com/spreadsheets/d/YYYY/export?format=csv&gid=0",
+  "formspree_endpoint": "https://formspree.io/f/mkgzkrjd",
+  "google_maps_api_key": ""
+}
