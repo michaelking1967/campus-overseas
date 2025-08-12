@@ -1,11 +1,5 @@
 <svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title">
   <title>Campus Overseas</title>
-  <defs>
-    <style>
-      .t1{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-weight:700;}
-      .t2{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-weight:500;}
-    </style>
-  </defs>
   <g transform="translate(10,10)">
     <circle cx="20" cy="20" r="20" fill="#0f2c5c"/>
     <ellipse cx="20" cy="20" rx="14" ry="20" fill="none" stroke="#f2e9e1" stroke-width="1.6"/>
@@ -15,6 +9,6 @@
     <rect x="18.4" y="8" width="3.2" height="24" fill="#f7c948"/>
     <rect x="12" y="18.4" width="16.8" height="3.2" fill="#f7c948"/>
   </g>
-  <text x="60" y="26" font-size="20" class="t1" fill="#0f2c5c">Campus Overseas</text>
-  <text x="60" y="46" font-size="12" class="t2" fill="#0f2c5c">海外的校园</text>
+  <text x="60" y="26" font-size="20" fill="#0f2c5c" font-weight="700">Campus Overseas</text>
+  <text x="60" y="46" font-size="12" fill="#0f2c5c" font-weight="500">海外的校园</text>
 </svg>

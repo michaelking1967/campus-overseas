@@ -1,2 +1,147 @@
-<!doctype html><title>placeholder</title>
-<img src="/logo.svg" alt="Campus Overseas logo">
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Campus Overseas · 海外的校园</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="container">
+  <div class="brand">
+    <img src="/logo.svg" alt="Campus Overseas logo" />
+    <div>
+      <div class="kicker">Assist Chinese Students Apply to Christian Schools</div>
+      <strong>Campus Overseas · 海外的校园</strong>
+    </div>
+  </div>
+  <nav>
+    <a href="#search">院校</a>
+    <a href="churches.html">教会</a>
+    <a href="#guide">申请指引</a>
+    <a href="#faq">常见问题</a>
+    <a href="#contact">联系</a>
+  </nav>
+</header>
+
+<section class="container hero">
+  <h1>帮助中国学生申请美国教会学校</h1>
+  <div class="sub">K–12 中小学 · 本科 · 研究生/博士 · 神学院</div>
+  <div class="verse">
+    <div><strong>约翰福音 3:16</strong></div>
+    <div>神爱世人，甚至将他的独生子赐给他们，叫一切信他的，不至灭亡，反得永生。</div>
+  </div>
+</section>
+
+<section class="container card search" id="search">
+  <h2>快速搜索（Google 表格驱动）</h2>
+  <div class="form-row">
+    <select id="phase">
+      <option value="">阶段：全部</option>
+      <option value="k12">K–12</option>
+      <option value="undergrad">本科</option>
+      <option value="graduate">研究生</option>
+      <option value="doctoral">博士</option>
+      <option value="seminary">神学院</option>
+    </select>
+    <select id="state">
+      <option value="">州：全部</option>
+      <option value="TX">Texas</option>
+      <option value="IL">Illinois</option>
+      <option value="CA">California</option>
+    </select>
+    <select id="i20">
+      <option value="">I‑20：不限</option>
+      <option value="true">可发 I‑20</option>
+      <option value="false">不可发 I‑20</option>
+    </select>
+    <select id="sevp">
+      <option value="">SEVP：不限</option>
+      <option value="true">SEVP 是</option>
+      <option value="false">SEVP 否</option>
+    </select>
+    <select id="tuition">
+      <option value="">学费区间</option>
+      <option value="0-10000">0–$10k</option>
+      <option value="10000-20000">$10k–$20k</option>
+      <option value="20000-30000">$20k–$30k</option>
+      <option value="30000-999999">$30k+</option>
+    </select>
+    <select id="faith">
+      <option value="">信仰声明</option>
+      <option value="true">需要</option>
+      <option value="false">不需要/未说明</option>
+    </select>
+    <button id="go">搜索</button>
+  </div>
+  <div class="chips">
+    <span class="chip" data-type="seminary">神学院</span>
+    <span class="chip" data-type="k12">K–12</span>
+    <span class="chip" data-type="undergrad">本科</span>
+    <span class="chip" data-type="graduate">研究生</span>
+  </div>
+  <div id="results" style="margin-top:14px;"></div>
+</section>
+
+<section class="container card" id="churches" style="margin-top:28px;">
+  <h2>找到你的属灵家</h2>
+  <p class="sub">支持按州/城市/宗派/语言搜索，内置地图视图。</p>
+  <a class="cta" href="churches.html">开始搜索教会 →</a>
+</section>
+
+<section class="container" id="guide" style="margin-top:28px;">
+  <h2>如何申请</h2>
+  <div class="grid">
+    <div class="card" style="grid-column: span 3;">
+      <div class="kicker">1</div>
+      <strong>筛选学校</strong><br/><span class="small">按阶段/州/学费/SEVP/I‑20/寄宿等条件</span>
+    </div>
+    <div class="card" style="grid-column: span 3;">
+      <div class="kicker">2</div>
+      <strong>准备材料</strong><br/><span class="small">成绩单、语言成绩、推荐信、资金证明、信仰声明（如需）</span>
+    </div>
+    <div class="card" style="grid-column: span 3;">
+      <div class="kicker">3</div>
+      <strong>提交申请</strong><br/><span class="small">在线申请与费用，关注奖学金与截止日期</span>
+    </div>
+    <div class="card" style="grid-column: span 3;">
+      <div class="kicker">4</div>
+      <strong>获取 I‑20</strong><br/><span class="small">支付 SEVIS 费并预约面签</span>
+    </div>
+  </div>
+</section>
+
+<section class="container faq" id="faq" style="margin-top:28px;">
+  <h2>常见问题</h2>
+  <details><summary>如何更新学校/教会数据？</summary><div>在 Google 表格里增删改，保存后网站自动抓取最新 CSV。</div></details>
+  <details><summary>地图需要密钥吗？</summary><div>详情页用 iframe 不需要；如需列表大地图，请在 config.json 填入 Google Maps API key。</div></details>
+</section>
+
+<section class="container card" id="contact" style="margin-top:28px;">
+  <h2>联系我们</h2>
+  <form id="contactForm">
+    <div class="grid">
+      <div style="grid-column: span 4;">
+        <label>姓名</label><br/><input name="name" placeholder="您的姓名" required />
+      </div>
+      <div style="grid-column: span 4;">
+        <label>邮箱</label><br/><input name="email" type="email" placeholder="you@example.com" required />
+      </div>
+      <div style="grid-column: span 4;">
+        <label>申请阶段</label><br/>
+        <select name="phase"><option>K–12</option><option>本科</option><option>研究生/博士</option><option>神学院</option></select>
+      </div>
+    </div>
+    <div style="margin-top:10px;">
+      <label>您的问题</label><br/><input name="message" placeholder="简单描述您的情况" />
+    </div>
+    <button style="margin-top:12px">发送</button>
+    <div id="formMsg" class="small" style="margin-top:8px;"></div>
+  </form>
+</section>
+
+<footer class="container"><div class="small">© Campus Overseas · 海外的校园 · 2025</div></footer>
+
+<script src="script.js"></script>
+</body>
+</html>

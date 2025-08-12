@@ -1,52 +1,12 @@
 <!doctype html>
 <html lang="zh">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Church · Campus Overseas</title>
-<link rel="stylesheet" href="styles.css">
-</head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Church · Campus Overseas</title><link rel="stylesheet" href="styles.css"></head>
 <body>
 <header class="container">
-  <div class="brand">
-    <a href="index.html"><img src="assets/logo.svg" alt="logo" /></a>
-    <strong>Campus Overseas</strong>
-  </div>
+  <div class="brand"><a href="index.html"><img src="/logo.svg" alt="logo" /></a><strong>Campus Overseas</strong></div>
   <a class="lang-toggle" href="churches.html">← 返回教会列表</a>
 </header>
 <section class="container" id="detail"></section>
-<script>
-async function run(){
-  const url = new URL(location.href);
-  const id = url.searchParams.get("id");
-  const res = await fetch("churches.json");
-  const data = await res.json();
-  const c = data.find(x => x.id === id);
-  const el = document.getElementById("detail");
-  if(!c){ el.innerHTML = "<p>Not found.</p>"; return; }
-  el.innerHTML = `
-    <h1>${c.name_zh} / ${c.name_en}</h1>
-    <div class="badge">${c.state}</div>
-    <div class="badge">${c.denomination || '-'}</div>
-    <div class="card" style="margin-top:12px">
-      <strong>简介</strong><br/>
-      <div>${c.intro_zh || ''}</div>
-      <div class="small" style="margin-top:6px">${c.intro_en || ''}</div>
-    </div>
-    <div class="card" style="margin-top:12px">
-      <strong>信息</strong>
-      <ul>
-        <li>地址：${c.address || '-'}</li>
-        <li>城市/州：${c.city || '-'}, ${c.state || '-'}</li>
-        <li>语言：${(c.language || []).join(', ')}</li>
-        <li>主日时间：${c.service_time || '-'}</li>
-        <li>网站：${c.website ? `<a href="${c.website}" target="_blank" rel="noopener">访问</a>` : '-'}</li>
-        <li>地图：${c.map_url ? `<a href="${c.map_url}" target="_blank" rel="noopener">打开地图</a>` : '-'}</li>
-      </ul>
-    </div>
-  `;
-}
-run();
-</script>
-</body>
-</html>
+<script src="script.js"></script>
+<script>window.addEventListener('load', ()=> window.renderChurchDetail && window.renderChurchDetail());</script>
+</body></html>

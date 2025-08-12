@@ -9,7 +9,7 @@
 <body>
 <header class="container">
   <div class="brand">
-    <a href="index.html"><img src="assets/logo.svg" alt="Campus Overseas logo" /></a>
+    <a href="index.html"><img src="/logo.svg" alt="Campus Overseas logo" /></a>
     <strong>Campus Overseas · 海外的校园</strong>
   </div>
   <nav>
@@ -20,83 +20,30 @@
 
 <section class="container hero">
   <h1>找到你的属灵家 · Find your church</h1>
-  <div class="sub">按州、城市、宗派、语言筛选适合留学生的基督教教会</div>
+  <div class="sub">筛选 + 地图视图（需 API key）</div>
 </section>
 
 <section class="container card">
   <div class="form-row">
-    <select id="state">
-      <option value="">州：全部</option>
-      <option value="TX">Texas</option>
-      <option value="CA">California</option>
-      <option value="IL">Illinois</option>
-      <option value="MA">Massachusetts</option>
-      <option value="NY">New York</option>
-      <option value="FL">Florida</option>
-    </select>
+    <select id="state"><option value="">州：全部</option></select>
     <input id="city" placeholder="城市 (City)" />
-    <select id="denom">
-      <option value="">宗派：全部</option>
-      <option value="Baptist">Baptist</option>
-      <option value="Presbyterian">Presbyterian</option>
-      <option value="Methodist">Methodist</option>
-      <option value="Pentecostal">Pentecostal</option>
-      <option value="Non-denominational">Non-denominational</option>
-      <option value="Catholic">Catholic</option>
-      <option value="Other">Other</option>
-    </select>
-    <select id="lang">
-      <option value="">语言：全部</option>
-      <option value="Mandarin">Mandarin</option>
-      <option value="Cantonese">Cantonese</option>
-      <option value="English">English</option>
-      <option value="Bilingual">Bilingual</option>
-    </select>
+    <select id="denom"><option value="">宗派：全部</option></select>
+    <select id="lang"><option value="">语言：全部</option></select>
+    <select id="ministry"><option value="">留学生事工</option><option value="true">有</option><option value="false">无</option></select>
     <button id="go">搜索</button>
   </div>
   <div id="results" style="margin-top:14px;"></div>
 </section>
 
-<footer class="container">
-  <div class="small">© Campus Overseas · 海外的校园 · 2025</div>
-</footer>
+<section class="container card" style="margin-top:20px;">
+  <h3>地图视图</h3>
+  <div id="mapWrap" class="mapbox"></div>
+  <div class="small">未配置 API key 时，此处显示占位说明。</div>
+</section>
 
-<script>
-async function loadChurches(){
-  const res = await fetch('churches.json');
-  return await res.json();
-}
-function render(list){
-  const box = document.getElementById('results');
-  if(!list.length){ box.innerHTML = '<div class="small">没有匹配的教会 / No results.</div>'; return; }
-  box.innerHTML = list.map(c => `
-    <div class="list-item">
-      <strong>${c.name_zh} / ${c.name_en}</strong><br/>
-      <span class="small">${c.address} · ${c.denomination || '-'} · ${(c.language||[]).join(', ')}</span><br/>
-      <a class="cta" href="church.html?id=${c.id}" target="_blank">查看详情 / View</a>
-    </div>
-  `).join('');
-}
-async function main(){
-  const data = await loadChurches();
-  function runFilter(){
-    const state = document.getElementById('state').value.trim();
-    const city = document.getElementById('city').value.trim().toLowerCase();
-    const denom = document.getElementById('denom').value.trim();
-    const lang = document.getElementById('lang').value.trim();
-    const res = data.filter(c => {
-      const okState = state ? c.state === state : true;
-      const okCity = city ? (c.city || '').toLowerCase().includes(city) : true;
-      const okDenom = denom ? (c.denomination || '') === denom : true;
-      const okLang = lang ? (c.language || []).includes(lang) || (lang==='Bilingual' && (c.language||[]).length>1) : true;
-      return okState && okCity && okDenom && okLang;
-    });
-    render(res);
-  }
-  document.getElementById('go').addEventListener('click', runFilter);
-  render(data);
-}
-main();
-</script>
+<footer class="container"><div class="small">© Campus Overseas · 海外的校园 · 2025</div></footer>
+
+<script src="script.js"></script>
+<script>window.addEventListener('load', ()=> window.initChurchList && window.initChurchList(true));</script>
 </body>
 </html>
